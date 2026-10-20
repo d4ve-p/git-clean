@@ -266,7 +266,7 @@ fi
 
 # Confirmation prompt unless -y / --yes
 if [ "$ASSUME_YES" -ne 1 ]; then
-  printf "${BOLD}Strip Claude co-author trailer from these %d commit(s)? [y/N]: ${RESET}" "$MATCH_COUNT"
+  printf "${BOLD}Strip Claude co-author trailer and lines below from these %d commit(s)? [y/N]: ${RESET}" "$MATCH_COUNT"
   read -r CONFIRM
   case "$CONFIRM" in
     [yY]|[yY][eE][sS])
@@ -291,7 +291,7 @@ BEGIN { count = 0 }
   sub(/\r$/, "", \$0)
   line = \$0
   if (line ~ /$FILTER_PATTERN/) {
-    next
+    exit
   }
   count++
   lines[count] = line

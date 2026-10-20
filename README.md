@@ -1,7 +1,7 @@
 # git-clean
 
 ### What It Does
-`git-clean` strips Claude and Anthropic `Co-Authored-By` lines from your unpushed Git commits before pushing to remote.
+`git-clean` strips Claude and Anthropic `Co-Authored-By` lines and everything below them from your unpushed Git commits before pushing to remote.
 
 ### How to Setup
 Run `.\install.ps1` in PowerShell (or `./install.sh` in Bash) to install the `git-clean` command directly to your PATH.
